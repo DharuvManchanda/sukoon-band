@@ -9,6 +9,8 @@ const phoneRe = /[0-9]{7,}/;
 export default function BookingModal() {
   const { open, closeBooking } = useBooking();
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
   const [errors, setErrors] = useState({ name: false, phone: false, email: false });
   const nameRef = useRef(null);
 
@@ -16,6 +18,8 @@ export default function BookingModal() {
     document.body.style.overflow = open ? 'hidden' : '';
     if (open) {
       setSubmitted(false);
+      setSending(false);
+      setSendError(false);
       setErrors({ name: false, phone: false, email: false });
       const t = setTimeout(() => nameRef.current?.focus(), 320);
       return () => clearTimeout(t);
@@ -35,7 +39,7 @@ export default function BookingModal() {
 
   const clearError = (field) => setErrors((p) => ({ ...p, [field]: false }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
     const name = form.name.value.trim();
@@ -48,8 +52,31 @@ export default function BookingModal() {
       email: !emailRe.test(email),
     };
     setErrors(next);
-
     if (next.name || next.phone || next.email) return;
+
+    setSending(true);
+    setSendError(false);
+
+    const { data, error } = await fetch('/api/book', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        phone: form.phone.value.trim(),
+        email,
+        type: form.type.value,
+        date: form.date.value,
+        message: form.message.value.trim(),
+      }),
+    }).then((r) => r.json()).then((d) => ({ data: d, error: null })).catch((err) => ({ data: null, error: err }));
+
+    setSending(false);
+
+    if (error || data?.error) {
+      setSendError(true);
+      return;
+    }
+
     setSubmitted(true);
   };
 
@@ -148,8 +175,13 @@ export default function BookingModal() {
               ></textarea>
             </div>
 
-            <button className="btn btn-primary" type="submit">
-              Send Booking Request <span className="arr">→</span>
+            {sendError && (
+              <p style={{ color: '#c0392b', fontSize: '.88rem', margin: '0 0 4px' }}>
+                Something went wrong — please try again or email us directly.
+              </p>
+            )}
+            <button className="btn btn-primary" type="submit" disabled={sending}>
+              {sending ? 'Sending…' : <>Send Booking Request <span className="arr">→</span></>}
             </button>
           </form>
         )}

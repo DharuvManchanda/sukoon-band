@@ -14,7 +14,7 @@ const SHOWS = [
     delay: 'd1',
     kicker: 'Intimate & joyful',
     title: 'Mehndi Nights',
-    img: 'https://images.unsplash.com/photo-1505932794465-147d1f1b2c97?w=1000&q=80&auto=format&fit=crop',
+    img: '/mehndi.JPEG',
     alt: 'Mehndi night celebration',
   },
   {
@@ -30,7 +30,7 @@ const SHOWS = [
     delay: 'd1',
     kicker: 'Community & culture',
     title: 'Cultural Events',
-    img: 'https://images.unsplash.com/photo-1611106211090-8f3c79eb8552?w=700&q=80&auto=format&fit=crop',
+    img: '/cultural.JPEG',
     alt: 'Cultural celebration',
   },
   {
@@ -38,7 +38,7 @@ const SHOWS = [
     delay: 'd2',
     kicker: 'Full-stage shows',
     title: 'Live Concerts',
-    img: 'https://images.unsplash.com/photo-1568219656418-15c329312bf1?w=700&q=80&auto=format&fit=crop',
+    img: '/hero2.AVIF',
     alt: 'Live concert performance',
   },
 ];

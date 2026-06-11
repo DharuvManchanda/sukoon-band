@@ -1,14 +1,13 @@
 import PhotoImg from '@/components/PhotoImg';
 
 const POSTS = [
-  { img: 'https://images.unsplash.com/photo-1587271636175-90d58cdad458?w=600&q=80&auto=format&fit=crop', alt: 'Performance moment' },
-  { img: 'https://images.unsplash.com/photo-1646765495885-8a61595cb9cf?w=600&q=80&auto=format&fit=crop', alt: 'Vocalist performing' },
-  { img: 'https://images.unsplash.com/photo-1505932794465-147d1f1b2c97?w=600&q=80&auto=format&fit=crop', alt: 'Mehndi detail' },
-  { img: 'https://images.unsplash.com/photo-1653246506721-1c47487e32b9?w=600&q=80&auto=format&fit=crop', alt: 'Musician portrait' },
+  { img: '/stage.jpg',   alt: 'Sukoon Band live on stage' },
+  { img: '/stage2.JPG',  alt: 'Stage performance' },
+  { img: '/stage3.jpg',  alt: 'Live music celebration' },
+  { img: '/stage4.JPEG', alt: 'Band performing at an event' },
+  { img: '/stage5.avif', alt: 'Sukoon Band stage moment' },
   { img: 'https://images.unsplash.com/photo-1633411988188-6e63354a9019?w=600&q=80&auto=format&fit=crop', alt: 'Performance close up' },
-  { img: 'https://images.unsplash.com/photo-1611106211090-8f3c79eb8552?w=600&q=80&auto=format&fit=crop', alt: 'Cultural celebration' },
   { img: 'https://images.unsplash.com/photo-1643098979608-1b22614abe88?w=600&q=80&auto=format&fit=crop', alt: 'Instrument close up' },
-  { img: 'https://images.unsplash.com/photo-1621801306185-8c0ccf9c8eb8?w=600&q=80&auto=format&fit=crop', alt: 'Celebration detail' },
 ];
 
 function IgIcon() {

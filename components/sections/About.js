@@ -14,7 +14,7 @@ export default function About() {
         <div className="about-art reveal">
           <div className="ph a-main" data-label="The musicians of Sukoon">
             <PhotoImg
-              src="https://images.unsplash.com/photo-1653246577296-3b047aabd8e5?w=900&q=80&auto=format&fit=crop"
+              src="/about2.jpg"
               alt="Musician performing with heart and soul"
             />
           </div>

@@ -8,7 +8,7 @@ export default function Featured() {
         <div className="featured-art reveal">
           <div className="ph f-img" data-label="Lead vocalist">
             <PhotoImg
-              src="https://images.unsplash.com/photo-1646765495885-8a61595cb9cf?w=900&q=80&auto=format&fit=crop"
+              src="/solo.jpg"
               alt="Lead vocalist of Sukoon performing"
             />
           </div>

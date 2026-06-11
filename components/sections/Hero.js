@@ -49,36 +49,34 @@ export default function Hero() {
         <div className="hero-art reveal d2">
           <div className="ph main" data-label="Sukoon live on stage">
             <PhotoImg
-              src="https://images.unsplash.com/photo-1771718968046-6b8cee870812?w=1100&q=80&auto=format&fit=crop"
-              alt="Tabla player performing live on stage"
+              src="/hero.JPEG"
+              alt="Sukoon Band performing live on stage"
             />
           </div>
-          <div className="ph inset float" data-label="Wedding celebration">
+          <div className="ph inset float" data-label="Live performance">
             <PhotoImg
-              src="https://images.unsplash.com/photo-1727430256509-0f897d6f4765?w=700&q=80&auto=format&fit=crop"
-              alt="Couple celebrating under a canopy of flowers"
+              src="/hero2.AVIF"
+              alt="Sukoon Band live music moment"
             />
           </div>
           <div className="badge float" style={{ opacity: 1, backgroundColor: 'rgb(248, 244, 238)' }}>
             <span className="ring">♪</span>
-            <span>
-              <b>847+</b>
-              <small>Events played</small>
-            </span>
           </div>
         </div>
       </div>
 
       <div className="hero-marquee reveal">
-        <div className="marquee-track">
-          {[0, 1].map((dup) =>
-            MARQUEE.map((m, i) => (
-              <span key={`${dup}-${i}`}>
-                {m}
-                <span></span>
-              </span>
-            ))
-          )}
+        <div className="marquee-clip">
+          <div className="marquee-track">
+            {[0, 1].map((dup) =>
+              MARQUEE.map((m, i) => (
+                <span key={`${dup}-${i}`}>
+                  {m}
+                  <span></span>
+                </span>
+              ))
+            )}
+          </div>
         </div>
       </div>
     </section>
