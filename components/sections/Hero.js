@@ -8,7 +8,7 @@ const MARQUEE = [
   'Sangeet',
   'Cultural Events',
   'Live Concerts',
-  'Private Soirées',
+  'Private Events',
 ];
 
 export default function Hero() {

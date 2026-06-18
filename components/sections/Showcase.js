@@ -6,7 +6,7 @@ const SHOWS = [
     delay: '',
     kicker: 'The main event',
     title: 'Weddings',
-    img: 'https://images.unsplash.com/photo-1722952934708-749c22eb2e58?w=1000&q=80&auto=format&fit=crop',
+    img: 'weddings.jpg',
     alt: 'Wedding celebration',
   },
   {
