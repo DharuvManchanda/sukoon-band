@@ -1,5 +1,3 @@
-import PhotoImg from '@/components/PhotoImg';
-
 const PACKAGES = [
   {
     idx: '01',
@@ -7,9 +5,6 @@ const PACKAGES = [
     tag: 'Pure. Soulful. Spiritual.',
     includes: ['Traditional Qawwali', 'Harmonium, Tabla & Dholak', 'Spiritual Poetry'],
     perfect: 'Mehfil-e-Sama, Private Gatherings',
-    img: '/sufi.jpg',
-    alt: 'Qawwali ensemble with harmonium and tabla',
-    pos: 'center 35%',
     delay: '',
   },
   {
@@ -18,8 +13,7 @@ const PACKAGES = [
     tag: 'Soul meets Stardom.',
     includes: ['Sufi Qawwali Favorites', 'Unplugged Bollywood Hits', 'Audience Interaction'],
     perfect: 'Weddings, Receptions, Celebrations',
-    img: '/weddings.jpg',
-    alt: 'Live wedding performance with the crowd',
+    featured: true,
     delay: 'd1',
   },
   {
@@ -28,9 +22,6 @@ const PACKAGES = [
     tag: 'From Sufi to Bhangra.',
     includes: ['Bollywood Mashups', 'High-Energy Dance Anthems', 'Dhol & Audience Hype'],
     perfect: 'Club Nights, Grand Baraat',
-    img: '/punjabi.jpg',
-    alt: 'High-energy bhangra performance on stage',
-    pos: 'center 35%',
     delay: 'd2',
   },
 ];
@@ -45,24 +36,29 @@ export default function Genres() {
           From intimate mehfils to full-floor celebrations — pick the soul that fits your moment.
         </p>
       </div>
-      <div className="genres">
+      <div className="pkgs">
         {PACKAGES.map((p) => (
-          <article className={`genre reveal${p.delay ? ' ' + p.delay : ''}`} tabIndex={0} key={p.name}>
-            <div className="ph" data-label={p.name}>
-              <PhotoImg src={p.img} alt={p.alt} loading="lazy" style={p.pos ? { objectPosition: p.pos } : undefined} />
+          <article
+            className={`pkg reveal${p.featured ? ' is-featured' : ''}${p.delay ? ' ' + p.delay : ''}`}
+            tabIndex={0}
+            key={p.name}
+          >
+            {p.featured && <span className="pkg-badge">Most Loved</span>}
+            <div className="pkg-head">
+              <span className="pkg-idx">{p.idx}</span>
+              <span className="pkg-kicker">Package</span>
             </div>
-            <div className="g-body">
-              <div className="g-idx">{p.idx} — Package</div>
-              <h3>{p.name}</h3>
-              <p className="g-tag">{p.tag}</p>
-              <ul className="g-incl">
-                {p.includes.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <div className="g-for">
-                <b>Perfect for</b> {p.perfect}
-              </div>
+            <h3>{p.name}</h3>
+            <p className="pkg-tag">{p.tag}</p>
+            <div className="pkg-incl-label">What's included</div>
+            <ul className="pkg-incl">
+              {p.includes.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <div className="pkg-for">
+              <b>Perfect for</b>
+              <span>{p.perfect}</span>
             </div>
           </article>
         ))}

@@ -8,7 +8,7 @@ export default function Featured() {
         <div className="featured-art reveal">
           <div className="ph f-img" data-label="Lead vocalist">
             <PhotoImg
-              src="/solo2.jpg"
+              src="/solo3.jpeg"
               alt="Lead vocalist of Sukoon performing"
             />
           </div>
@@ -16,10 +16,10 @@ export default function Featured() {
         </div>
         <div className="featured-copy reveal d2">
           <span className="eyebrow">The Soul of Sukoon</span>
-          <h2 className="h-sec">Aman Deep</h2>
+          <h2 className="h-sec">Sur-E-Saab</h2>
           <div className="role">Lead Vocalist &amp; Founder</div>
           <blockquote>Music is not just what we do — it is who we are.</blockquote>
-          <div className="sign">— Aman Deep</div>
+          <div className="sign">— Sur-E-Saab</div>
           <div className="f-meta">
             <div>
               <b>18 yrs</b>
