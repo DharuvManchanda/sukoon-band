@@ -6,7 +6,7 @@ const SHOWS = [
     delay: '',
     kicker: 'The main event',
     title: 'Weddings',
-    img: 'weddings.jpg',
+    img: '/weddings.jpg',
     alt: 'Wedding celebration',
   },
   {
@@ -30,7 +30,7 @@ const SHOWS = [
     delay: 'd1',
     kicker: 'Community & culture',
     title: 'Cultural Events',
-    img: '/cultural.JPEG',
+    img: '/cultural.jpeg',
     alt: 'Cultural celebration',
   },
   {
@@ -57,7 +57,11 @@ export default function Showcase() {
         {SHOWS.map((s, i) => (
           <article className={`show ${s.cls} reveal${s.delay ? ' ' + s.delay : ''}`} key={i}>
             <div className="ph" data-label={s.title}>
-              <PhotoImg src={s.img} alt={s.alt} loading="lazy" />
+              <PhotoImg
+                src={s.img}
+                alt={s.alt}
+                sizes="(max-width: 760px) 100vw, (max-width: 1240px) 50vw, 33vw"
+              />
             </div>
             <div className="s-body">
               <small>{s.kicker}</small>

@@ -42,7 +42,7 @@ export default function Testimonials() {
               <p>{t.quote}</p>
               <div className="who">
                 <div className="ph av" data-label="A">
-                  <PhotoImg src={t.img} alt="" loading="lazy" />
+                  <PhotoImg src={t.img} alt={t.name} sizes="50px" />
                 </div>
                 <div>
                   <b>{t.name}</b>

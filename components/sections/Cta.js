@@ -8,7 +8,7 @@ export default function Cta() {
         <PhotoImg
           src="https://images.unsplash.com/photo-1646765566496-8744ce5e7738?w=1600&q=80&auto=format&fit=crop"
           alt="Live performance moment"
-          loading="lazy"
+          sizes="100vw"
         />
       </div>
       <div className="wrap cta-inner reveal">

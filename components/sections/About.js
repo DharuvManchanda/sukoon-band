@@ -16,15 +16,16 @@ export default function About() {
             <PhotoImg
               src="/about2.jpg"
               alt="Musician performing with heart and soul"
+              sizes="(max-width: 1024px) 90vw, 520px"
             />
           </div>
-          <div className="ph a-inset" data-label="Live rhythm">
+          {/* <div className="ph a-inset" data-label="Live rhythm">
             <PhotoImg
               src="https://images.unsplash.com/photo-1570797803365-c6eb43b1f040?w=700&q=80&auto=format&fit=crop"
               alt="Hands playing percussion"
+              sizes="(max-width: 1024px) 48vw, 270px"
             />
-          </div>
-          <div className="a-quote">”</div>
+          </div> */}
         </div>
         <div className="about-copy reveal d2">
           <span className="eyebrow">About Sukoon</span>

@@ -51,12 +51,15 @@ export default function Hero() {
             <PhotoImg
               src="/hero.JPEG"
               alt="Sukoon Band performing live on stage"
+              priority
+              sizes="(max-width: 1024px) 90vw, 600px"
             />
           </div>
           <div className="ph inset float" data-label="Live performance">
             <PhotoImg
               src="/hero2.AVIF"
               alt="Sukoon Band live music moment"
+              sizes="(max-width: 1024px) 40vw, 280px"
             />
           </div>
           <div className="badge float" style={{ opacity: 1, backgroundColor: 'rgb(248, 244, 238)' }}>

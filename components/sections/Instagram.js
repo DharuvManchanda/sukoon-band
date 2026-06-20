@@ -4,13 +4,13 @@ import { useState, useEffect, useCallback } from 'react';
 import PhotoImg from '@/components/PhotoImg';
 
 const POSTS = [
-  { img: '/stage.jpg',   alt: 'Sukoon Band live on stage' },
-  { img: '/stage2.JPG',  alt: 'Stage performance' },
-  { img: '/stage3.jpg',  alt: 'Live music celebration' },
-  { img: '/stage4.JPEG', alt: 'Band performing at an event' },
-  { img: '/stage5.avif', alt: 'Sukoon Band stage moment' },
-  { img: 'https://images.unsplash.com/photo-1633411988188-6e63354a9019?w=600&q=80&auto=format&fit=crop', alt: 'Performance close up' },
-  { img: 'https://images.unsplash.com/photo-1643098979608-1b22614abe88?w=600&q=80&auto=format&fit=crop', alt: 'Instrument close up' },
+  { img: '/stage.jpg',   alt: 'Sukoon Band live on stage', ar: '3 / 4' },
+  { img: '/stage2.JPG',  alt: 'Stage performance', ar: '1 / 1' },
+  { img: '/stage3.jpg',  alt: 'Live music celebration', ar: '4 / 5' },
+  { img: '/stage4.JPEG', alt: 'Band performing at an event', ar: '3 / 4' },
+  { img: '/stage5.avif', alt: 'Sukoon Band stage moment', ar: '1 / 1' },
+  { img: 'https://images.unsplash.com/photo-1633411988188-6e63354a9019?w=600&q=80&auto=format&fit=crop', alt: 'Performance close up', ar: '4 / 5' },
+  { img: 'https://images.unsplash.com/photo-1643098979608-1b22614abe88?w=600&q=80&auto=format&fit=crop', alt: 'Instrument close up', ar: '3 / 4' },
 ];
 
 export default function Instagram() {
@@ -68,8 +68,12 @@ export default function Instagram() {
               }
             }}
           >
-            <div className="ph" data-label="@sukoonband">
-              <PhotoImg src={p.img} alt={p.alt} loading="lazy" />
+            <div className="ph" data-label="@sukoonband" style={{ aspectRatio: p.ar }}>
+              <PhotoImg
+                src={p.img}
+                alt={p.alt}
+                sizes="(max-width: 760px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              />
             </div>
           </div>
         ))}
@@ -94,7 +98,9 @@ export default function Instagram() {
           </button>
 
           <figure className="lb-stage" onClick={(e) => e.stopPropagation()}>
-            <PhotoImg src={POSTS[active].img} alt={POSTS[active].alt} />
+            <div className="lb-frame">
+              <PhotoImg src={POSTS[active].img} alt={POSTS[active].alt} sizes="92vw" priority />
+            </div>
             <figcaption className="lb-caption">
               <span className="lb-count">{active + 1} / {POSTS.length}</span>
             </figcaption>

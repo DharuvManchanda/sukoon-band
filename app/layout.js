@@ -2,7 +2,7 @@ import './globals.css';
 
 const siteTitle = 'Sukoon Band — Live Music for Weddings & Celebrations · Vancouver, BC';
 const siteDescription =
-  "Sukoon Band — Vancouver's premier live music group for Punjabi, Hindi, Sufi, Qawwali and Folk performances at weddings, receptions and cultural celebrations across British Columbia.";
+  "Live Punjabi, Bollywood, Sufi and Qawwali music for weddings, receptions, mehndi nights, corporate events and cultural celebrations across British Columbia.";
 
 export const metadata = {
   title: siteTitle,

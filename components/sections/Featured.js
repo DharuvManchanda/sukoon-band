@@ -10,6 +10,7 @@ export default function Featured() {
             <PhotoImg
               src="/solo3.jpeg"
               alt="Lead vocalist of Sukoon performing"
+              sizes="(max-width: 1024px) 90vw, 540px"
             />
           </div>
           <div className="f-frame"></div>
