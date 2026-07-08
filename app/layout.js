@@ -5,6 +5,7 @@ const siteDescription =
   "Live Punjabi, Bollywood, Sufi and Qawwali music for weddings, receptions, mehndi nights, corporate events and cultural celebrations across British Columbia.";
 
 export const metadata = {
+  metadataBase: new URL('https://sukoonband.site'),
   title: siteTitle,
   description: siteDescription,
   icons: {
